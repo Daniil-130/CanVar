@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CanVar</title>
+    <style>
+        body {
+            background-color: #f0f8e6;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #008000;
+            text-align: center;
+            margin-top: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            color: #006400;
+            font-size: 18px;
+            text-align: center;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        input[type="search"] {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f0f8e6;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+}
+
+input[type="search"]:focus {
+    border-color: #008000;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #555;
+}
+.search-container {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    border: 2px solid #008000;
+    border-radius: 10px;
+    background-color: #f0f8e6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+                @keyframes slideIn {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+                a:hover {
+            color: #006400;
+        }
+
+        a {
+            color: #008000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        li {
+            margin-bottom: 10px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        button {
+            position: center;
+            background-color: #008000;
+            color: #fff;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px; /* Овальная форма */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        button:hover {
+            background-color: #006400;
+        }
+
+        a.youtube-link {
+            color: #ff0000; /* Красный цвет для ссылки на YouTube */
+        }
+
+    </style>
+</head>
+<body>
+<div class="search-container">
+    <h1>Welcome to CanVar!</h1>
+    <input type="search" id="searchInput" onkeyup="searchFunction()" placeholder="Search..">
+    <br></br>
+    <button onclick="performSearch()">Search</button>
+<ul id="myMenu">
+  <!-- Исправленная ссылка для Canvi -->
+  <li><a href="https://canvi.example.com" target="_blank">Canvi</a></li>
+  <!-- Остальные ссылки выглядят корректно -->
+  <li><a href="https://sites.google.com/view/canvar-info/canvar-info" target="_blank">CanVar info</a></li>
+  <li><a href="https://sites.google.com/view/canvi-store/canvi-store" target="_blank">CanVar Store</a></li>
+  <li><a class="youtube-link" href="https://youtube.com" target="_blank">YouTube</a></li>
+</ul>
+
+    <p>Made with love</p>
+        <p>Canvi</p>
+
+    <script>
+        document.getElementById("searchInput").focus();
+
+        function performSearch() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const links = document.querySelectorAll("ul li a");
+
+            let found = false;
+            for (const link of links) {
+                if (link.innerText.toLowerCase().includes(input)) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                // If no matching link, perform Google search
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(input)}`;
+            }
+        }
+    </script>
+</body>
+</html>
